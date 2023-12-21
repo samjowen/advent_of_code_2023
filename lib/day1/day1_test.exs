@@ -11,7 +11,7 @@ defmodule Day1Test do
   end
 
   test "opens file and writes each line to a list of strings" do
-    assert Day1.parse_file("./lib/day1/mocks/lines_of_text.txt", :string) == [
+    assert Day1.parse_file("./test/mocks/lines_of_text.txt", :string) == [
              "first line of the file",
              "second line of the file",
              "third line of the file"
