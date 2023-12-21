@@ -1,6 +1,7 @@
-# AdventOfCode2023
+# Advent Of Code 2023
 
-Exploring Elixir through Advent of Code 2023, embracing Test-Driven Development for quality and efficiency. :purple_heart:
+Exploring Elixir through [Advent of Code 2023](https://adventofcode.com/2023), embracing Test-Driven Development for quality and efficiency. :purple_heart:
+
 
 ## Installation
 
