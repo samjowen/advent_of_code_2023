@@ -3,18 +3,27 @@ defmodule Day1 do
   Documentation for `AdventOfCode2023`.
   """
 
+  @spec find_first_and_last_number(String.t()) :: {integer(), integer()}
   @doc """
-  Hello world.
+  Finds the first and last number in a string.
+
+  ## Parameters
+
+  - `input_string`: A string that contains numbers.
+
+  ## Returns
+
+  A tuple where the first element is the first number in the string and the second element is the last number in the string.
 
   ## Examples
 
-      iex> AdventOfCode2023.hello()
-      :world
+      iex> Day1.find_first_and_last_number("1abc2")
+      {1, 2}
 
   """
-  def find_first_and_last_number(string) do
+  def find_first_and_last_number(input_string) do
     numbers =
-      string
+      input_string
       |> String.replace(~r/[^0-9]/, "")
       |> String.split("", trim: true)
       |> Enum.map(&String.to_integer/1)
