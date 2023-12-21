@@ -1,4 +1,8 @@
 defmodule Day1Test do
+  @moduledoc """
+  This module contains tests for the Day1 module.
+  """
+
   use ExUnit.Case
   doctest Day1
 
