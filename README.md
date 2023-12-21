@@ -1,6 +1,6 @@
 # AdventOfCode2023
 
-**TODO: Add description**
+Exploring Elixir through Advent of Code 2023, embracing Test-Driven Development for quality and efficiency. :purple_heart:
 
 ## Installation
 
