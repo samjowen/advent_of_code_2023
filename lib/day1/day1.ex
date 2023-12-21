@@ -12,7 +12,13 @@ defmodule Day1 do
       :world
 
   """
-  def find_first_and_last_number(char_list) do
-      number_regex = ~r/^-?\d+$/
+  def find_first_and_last_number(string) do
+    numbers =
+      string
+      |> String.replace(~r/[^0-9]/, "")
+      |> String.split("", trim: true)
+      |> Enum.map(&String.to_integer/1)
+
+    {List.first(numbers), List.last(numbers)}
   end
 end
