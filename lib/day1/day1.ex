@@ -30,4 +30,13 @@ defmodule Day1 do
 
     {List.first(numbers), List.last(numbers)}
   end
+
+  def parse_file(file_path, return_type) do
+    case return_type do
+      :string ->
+        file_path
+        |> File.read!()
+        |> String.split("\n", trim: true)
+    end
+  end
 end
