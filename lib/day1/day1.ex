@@ -31,16 +31,15 @@ defmodule Day1 do
     {List.first(numbers), List.last(numbers)}
   end
 
-  def parse_file(file_path, return_type) do
-    case return_type do
-      :string ->
-        file_path
-        |> File.read!()
-        |> String.split("\n", trim: true)
-    end
+  def parse_file(file_path) do
+    file_path
+    |> File.read!()
+    |> String.split("\n", trim: true)
   end
 
   def parse_list_to_first_last_numbers(input_list) do
     input_list |> Enum.map(&find_first_and_last_number/1)
   end
+
+  # End module
 end
