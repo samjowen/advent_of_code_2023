@@ -39,4 +39,8 @@ defmodule Day1 do
         |> String.split("\n", trim: true)
     end
   end
+
+  def parse_list_to_first_last_numbers(input_list) do
+    input_list |> Enum.map(&find_first_and_last_number/1)
+  end
 end
