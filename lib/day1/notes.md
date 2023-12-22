@@ -16,3 +16,14 @@ Use a loop to go through each line, pattern match 0-9 and put all of the digits 
 ## Resources
 
 - [File](https://hexdocs.pm/elixir/File.html)
+
+### Solution
+
+```elixir
+iex(1)> AdventOfCode2023.day1_solve()
+56049
+```
+
+Answer: 56049
+
+That's the right answer! You are one gold star closer to restoring snow operations.
