@@ -7,10 +7,8 @@ defmodule AdventOfCode2023 do
   def day1_solve() do
     string_list = Day1.parse_file("lib/day1/data/input.txt")
 
-    number_list = Day1.parse_list_to_first_last_numbers(string_list)
+    number_list = Enum.map(string_list, &Day1.combine_first_and_last_number/1)
 
-    summed_tuple_list = Enum.map(number_list, &Tuple.sum/1)
-
-    Enum.sum(summed_tuple_list)
+    Enum.sum(number_list)
   end
 end

@@ -31,6 +31,7 @@ defmodule Day1 do
     {List.first(numbers), List.last(numbers)}
   end
 
+  @spec combine_first_and_last_number(binary()) :: integer()
   def combine_first_and_last_number(input_string) do
     numbers =
       input_string
