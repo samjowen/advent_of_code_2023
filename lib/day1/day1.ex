@@ -41,5 +41,7 @@ defmodule Day1 do
     input_list |> Enum.map(&find_first_and_last_number/1)
   end
 
+  
+
   # End module
 end

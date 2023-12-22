@@ -18,13 +18,14 @@ defmodule Day1Test do
            ]
   end
 
-  # test "parses list of strings into first and last number tuples" do
-  #   list = Day1.parse_file("./test/mocks/lines_of_text_w_numbers.txt")
+  test "parses list of strings into first and last number tuples" do
+    list = Day1.parse_file("./test/mocks/lines_of_text_w_numbers.txt")
 
-  #   assert Day1.parse_list_to_first_last_numbers(list, :string) == [
-  #            {1, 3},
-  #            {4, 6},
-  #            {7, 9}
-  #          ]
-  # end
+    assert Day1.parse_list_to_first_last_numbers(list) == [
+             {1, 3},
+             {4, 6},
+             {7, 9}
+           ]
+  end
+
 end
