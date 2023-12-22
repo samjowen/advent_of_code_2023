@@ -10,6 +10,10 @@ defmodule Day1Test do
     assert Day1.find_first_and_last_number("1abc2") == {1, 2}
   end
 
+  test "combines first and last number from array" do
+    assert Day1.combine_first_and_last_number("1abc2") == 12
+  end
+
   test "opens file and writes each line to a list of strings" do
     assert Day1.parse_file("./test/mocks/lines_of_text.txt") == [
              "first line of the file",
@@ -27,5 +31,4 @@ defmodule Day1Test do
              {7, 9}
            ]
   end
-
 end
