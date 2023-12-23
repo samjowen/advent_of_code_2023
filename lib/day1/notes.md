@@ -1,6 +1,14 @@
 # Day 1
 
+Part I:
+
 The challenge that we've been set is to somehow parse through the input file, line by line and find the first and last digits of each line. We then need to add all of the digits to the total to get the final answer.
+
+Part II:
+
+Your calculation isn't quite right. It looks like some of the digits are actually spelled out with letters: one, two, three, four, five, six, seven, eight, and nine also count as valid "digits".
+
+Equipped with this new information, you now need to find the real first and last digit on each line. For example:
 
 ## Possible Solution
 
