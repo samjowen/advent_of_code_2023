@@ -31,6 +31,22 @@ defmodule Day1 do
     {List.first(numbers), List.last(numbers)}
   end
 
+  def find_first_number(input_string) do
+    numbers =
+      input_string
+      |> String.replace(~r/[^0-9]/, "")
+      |> String.split("", trim: true)
+      |> Enum.map(&String.to_integer/1)
+
+    List.first(numbers)
+  end
+
+  def find_last_number(string) do
+    string
+    |> String.reverse()
+    |> find_first_number()
+  end
+
   @spec combine_first_and_last_number(binary()) :: integer()
   def combine_first_and_last_number(input_string) do
     numbers =
@@ -88,15 +104,24 @@ defmodule Day1 do
       "nine" => "9"
     }
 
-    Enum.reduce(replacement_map, string, fn {key, value}, acc ->
+    sorted_map =
+      replacement_map
+      |> Enum.to_list()
+      |> Enum.sort_by(fn {key, _value} -> -String.length(key) end)
+
+    Enum.reduce(sorted_map, string, fn {key, value}, acc ->
       String.replace(acc, key, value)
     end)
   end
 
   def replace_substrings(string, replacement_map) do
-    Enum.reduce(replacement_map, string, fn {key, value}, acc ->
-      String.replace(acc, key, value)
-    end)
+    regex =
+      replacement_map
+      |> Enum.map(fn {key, _} -> key end)
+      |> Enum.join("|")
+      |> Regex.compile!()
+
+    String.replace(string, regex, fn match -> Map.get(replacement_map, match) end)
   end
 
   # End module
