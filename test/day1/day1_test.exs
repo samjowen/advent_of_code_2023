@@ -61,4 +61,15 @@ defmodule Day1Test do
            ) ==
              "0 1 2 3 4 5 6 7 8 9"
   end
+
+  test "should convert substrings according to a replacement map" do
+    translation_map = %{
+      "meow" => "woof",
+      "woof" => "meow"
+    }
+
+    test_string = "meow woof"
+
+    assert Day1.replace_substrings(test_string, translation_map) == "woof meow"
+  end
 end
