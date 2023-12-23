@@ -54,4 +54,11 @@ defmodule Day1Test do
   test "convert word to int string returns same string if not a number word" do
     assert Day1.convert_word_to_integer_string("not a number word") == "not a number word"
   end
+
+  test "convert all number words in a string to integer strings" do
+    assert Day1.convert_substrings_to_integer_strings(
+             "zero one two three four five six seven eight nine"
+           ) ==
+             "0 1 2 3 4 5 6 7 8 9"
+  end
 end

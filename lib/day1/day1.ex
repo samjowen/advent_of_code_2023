@@ -74,5 +74,24 @@ defmodule Day1 do
     end
   end
 
+  def convert_substrings_to_integer_strings(string) do
+    replacement_map = %{
+      "zero" => "0",
+      "one" => "1",
+      "two" => "2",
+      "three" => "3",
+      "four" => "4",
+      "five" => "5",
+      "six" => "6",
+      "seven" => "7",
+      "eight" => "8",
+      "nine" => "9"
+    }
+
+    Enum.reduce(replacement_map, string, fn {key, value}, acc ->
+      String.replace(acc, key, value)
+    end)
+  end
+
   # End module
 end
