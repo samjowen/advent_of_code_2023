@@ -93,5 +93,11 @@ defmodule Day1 do
     end)
   end
 
+  def replace_substrings(string, replacement_map) do
+    Enum.reduce(replacement_map, string, fn {key, value}, acc ->
+      String.replace(acc, key, value)
+    end)
+  end
+
   # End module
 end
