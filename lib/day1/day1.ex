@@ -70,7 +70,7 @@ defmodule Day1 do
       "seven" -> "7"
       "eight" -> "8"
       "nine" -> "9"
-      # _ -> word
+      _ -> word
     end
   end
 
