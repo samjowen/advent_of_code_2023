@@ -5,9 +5,7 @@ defmodule AdventOfCode2023 do
 
   def day1_solve_part_1(input_file_path) do
     string_list = Day1.parse_file(input_file_path)
-    replaced_number_list = Enum.map(string_list, &Day1.find_first_and_last_number/1)
-    number_list = Enum.map(replaced_number_list, &Day1.combine_first_and_last_number/1)
-
+    number_list = Enum.map(string_list, &Day1.combine_first_and_last_number/1)
     Enum.sum(number_list)
   end
 
