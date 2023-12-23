@@ -31,46 +31,13 @@ defmodule AdventOfCode2023 do
       "nine" => "9"
     }
 
-    reversed_replacement_map = %{
-      "orez" => "0",
-      "eno" => "1",
-      "owt" => "2",
-      "eerht" => "3",
-      "ruof" => "4",
-      "evif" => "5",
-      "xis" => "6",
-      "neves" => "7",
-      "thgie" => "8",
-      "enin" => "9"
-    }
-
     string_list = Day1.parse_file(input_file_path)
-
-    reversed_string_list =
-      Enum.map(string_list, &String.reverse/1)
-
-    IO.inspect(reversed_string_list)
 
     replaced_number_list =
       Enum.map(string_list, &Day1.replace_substrings(&1, replacement_map))
 
-    replaced_number_list_reversed =
-      Enum.map(reversed_string_list, &Day1.replace_substrings(&1, reversed_replacement_map))
-
-    IO.inspect(replaced_number_list_reversed)
-
-    first_numbers =
-      Enum.map(replaced_number_list, &Day1.find_first_number/1)
-
-    last_numbers =
-      Enum.map(replaced_number_list_reversed, &Day1.find_first_number/1)
-
-    number = Enum.zip(first_numbers, last_numbers)
-
-    IO.inspect(number)
-
     number_list = Enum.map(replaced_number_list, &Day1.combine_first_and_last_number/1)
-    IO.inspect(number_list)
+
     Enum.sum(number_list)
   end
 end
