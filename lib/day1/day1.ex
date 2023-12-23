@@ -58,5 +58,20 @@ defmodule Day1 do
     input_list |> Enum.map(&find_first_and_last_number/1)
   end
 
+  def convert_word_to_integer_string(word) do
+    case word do
+      "zero" -> "0"
+      "one" -> "1"
+      "two" -> "2"
+      "three" -> "3"
+      "four" -> "4"
+      "five" -> "5"
+      "six" -> "6"
+      "seven" -> "7"
+      "eight" -> "8"
+      "nine" -> "9"
+    end
+  end
+
   # End module
 end
