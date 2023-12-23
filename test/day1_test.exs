@@ -31,4 +31,19 @@ defmodule Day1Test do
              {7, 9}
            ]
   end
+
+  test "converts number words into integer strings (0-9)" do
+    assert Enum.map_every([0..9], 1, fn x -> Day1.convert_word_to_integer_string(x) end) == [
+             "0",
+             "1",
+             "2",
+             "3",
+             "4",
+             "5",
+             "6",
+             "7",
+             "8",
+             "9"
+           ]
+  end
 end
