@@ -13,4 +13,8 @@ defmodule Day1SolvesTest do
   test "solves the day 1 part II puzzle correctly" do
     assert AdventOfCode2023.day1_solve_part_2("./test/day1/mocks/part2-test-case.txt") == 281
   end
+
+  test "solves the day 1 part II puzzle correctly 2" do
+    assert AdventOfCode2023.day1_solve_part_2("./test/day1/mocks/part2-test-case-2.txt") == 79
+  end
 end

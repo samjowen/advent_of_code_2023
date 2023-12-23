@@ -76,32 +76,32 @@ defmodule Day1 do
 
   def convert_word_to_integer_string(word) do
     case word do
-      "zero" -> "0"
-      "one" -> "1"
-      "two" -> "2"
-      "three" -> "3"
-      "four" -> "4"
-      "five" -> "5"
-      "six" -> "6"
-      "seven" -> "7"
-      "eight" -> "8"
-      "nine" -> "9"
+      "zero" -> "zero0zero"
+      "one" -> "one1one"
+      "two" -> "two2two"
+      "three" -> "three3three"
+      "four" -> "four4four"
+      "five" -> "five5five"
+      "six" -> "six6six"
+      "seven" -> "seven7seven"
+      "eight" -> "eight8eight"
+      "nine" -> "nine9nine"
       _ -> word
     end
   end
 
   def convert_substrings_to_integer_strings(string) do
     replacement_map = %{
-      "zero" => "0",
-      "one" => "1",
-      "two" => "2",
-      "three" => "3",
-      "four" => "4",
-      "five" => "5",
-      "six" => "6",
-      "seven" => "7",
-      "eight" => "8",
-      "nine" => "9"
+      "zero" => "zero0zero",
+      "one" => "one1one",
+      "two" => "two2two",
+      "three" => "three3three",
+      "four" => "four4four",
+      "five" => "five5five",
+      "six" => "six6six",
+      "seven" => "seven7seven",
+      "eight" => "eight8eight",
+      "nine" => "nine9nine"
     }
 
     sorted_map =

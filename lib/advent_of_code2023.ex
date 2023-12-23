@@ -19,25 +19,27 @@ defmodule AdventOfCode2023 do
   def day1_solve_part_2(input_file_path) do
     # Variables that we need:
     replacement_map = %{
-      "zero" => "0",
-      "one" => "1",
-      "two" => "2",
-      "three" => "3",
-      "four" => "4",
-      "five" => "5",
-      "six" => "6",
-      "seven" => "7",
-      "eight" => "8",
-      "nine" => "9"
+      "zero" => "zero0zero",
+      "one" => "one1one",
+      "two" => "two2two",
+      "three" => "three3three",
+      "four" => "four4four",
+      "five" => "five5five",
+      "six" => "six6six",
+      "seven" => "seven7seven",
+      "eight" => "eight8eight",
+      "nine" => "nine9nine"
     }
 
     string_list = Day1.parse_file(input_file_path)
+    IO.inspect(string_list)
 
     replaced_number_list =
-      Enum.map(string_list, &Day1.replace_substrings(&1, replacement_map))
+      Enum.map(string_list, &Day1.convert_substrings_to_integer_strings(&1))
 
+    IO.inspect(replaced_number_list)
     number_list = Enum.map(replaced_number_list, &Day1.combine_first_and_last_number/1)
-
+    IO.inspect(number_list)
     Enum.sum(number_list)
   end
 end
