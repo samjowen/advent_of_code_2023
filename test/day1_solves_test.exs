@@ -4,13 +4,13 @@ defmodule Day1SolvesTest do
   """
 
   use ExUnit.Case
-  doctest Day1Solves
+  doctest AdventOfCode2023
 
   test "solves the day 1 part I puzzle correctly" do
-    assert AdventOfCode2023.day1_solve_part_1("./mocks/day1/part1-test-case.txt") == 142
+    assert AdventOfCode2023.day1_solve_part_1("./test/mocks/day1/part1-test-case.txt") == 142
   end
-
 
   test "solves the day 1 part II puzzle correctly" do
-    assert AdventOfCode2023.day1_solve_part_2("./mocks/day1/part2-test-case.txt") == 281
+    assert AdventOfsCode2023.day1_solve_part_2("./test/mocks/day1/part2-test-case.txt") == 281
   end
+end
