@@ -33,7 +33,11 @@ defmodule Day1Test do
   end
 
   test "converts number words into integer strings (0-9)" do
-    assert Enum.map_every([0..9], 1, fn x -> Day1.convert_word_to_integer_string(x) end) == [
+    assert Enum.map_every(
+             ["zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"],
+             1,
+             fn x -> Day1.convert_word_to_integer_string(x) end
+           ) == [
              "0",
              "1",
              "2",
@@ -45,5 +49,9 @@ defmodule Day1Test do
              "8",
              "9"
            ]
+  end
+
+  test "convert word to int string returns same string if not a number word" do
+    assert Day1.convert_word_to_integer_string("not a number word") == "not a number word"
   end
 end
