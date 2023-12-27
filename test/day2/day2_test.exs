@@ -52,12 +52,30 @@ defmodule Day2Test do
     assert Day2.sum_map(map) == 29
   end
 
-  test "it tests if a game set string has too many cubes" do
-    CUBE_LIMIT = 25
+  test "it tests if a game set string has exactly the cube limit" do
+    cube_limit = 29
 
     # 29 cubes
     twenty_nine_cube_set_str = "7 red, 14 blue, 8 green"
 
-    assert Day2.validate_cube_count(twenty_nine_cube_set_str, CUBE_LIMIT) == false
+    assert Day2.validate_set(twenty_nine_cube_set_str, cube_limit) == true
+  end
+
+  test "it tests if a game set string has less than the cube limit" do
+    cube_limit = 29
+
+    # 28 cubes
+    twenty_eight_cube_set_str = "7 red, 14 blue, 7 green"
+
+    assert Day2.validate_set(twenty_eight_cube_set_str, cube_limit) == true
+  end
+
+  test "it tests if a game set string has more than the cube limit" do
+    cube_limit = 29
+
+    # 30 cubes
+    thirty_cube_set_str = "7 red, 15 blue, 8 green"
+
+    assert Day2.validate_set(thirty_cube_set_str, cube_limit) == false
   end
 end
