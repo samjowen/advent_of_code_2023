@@ -41,4 +41,14 @@ defmodule Day2Test do
   test "it extracts integer from a string" do
     assert Day2.extract_integer("21 meow 21") == 2121
   end
+
+  test "it adds the values of a map together" do
+    map = %{
+      :red => 7,
+      :green => 8,
+      :blue => 14
+    }
+
+    assert Day2.sum_map(map) == 29
+  end
 end
