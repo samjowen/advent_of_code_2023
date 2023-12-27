@@ -55,4 +55,8 @@ defmodule Day2 do
   def extract_integer(string) do
     remove_non_digits(string) |> String.to_integer()
   end
+
+  def sum_map(map) do
+    Map.values(map) |> Enum.sum()
+  end
 end
