@@ -25,21 +25,24 @@ defmodule Day2 do
 
     cube_list = String.split(set_string, ",")
 
-    Enum.reduce(cube_list, initial_cube_map, fn x, acc ->
-      case String.contains?(x, "red") do
-        true -> Map.put(acc, :red, extract_integer(x))
-        false -> acc
-      end
+    Enum.reduce(cube_list, initial_cube_map, fn cube, acc ->
+      acc
       |> (fn acc ->
-            case String.contains?(x, "green") do
-              true -> Map.put(acc, :green, extract_integer(x))
-              false -> acc
+            case String.contains?(cube, "red") do
+              true -> Map.put(acc, :red, extract_integer(cube))
+              _ -> acc
             end
           end).()
       |> (fn acc ->
-            case String.contains?(x, "blue") do
-              true -> Map.put(acc, :blue, extract_integer(x))
-              false -> acc
+            case String.contains?(cube, "green") do
+              true -> Map.put(acc, :green, extract_integer(cube))
+              _ -> acc
+            end
+          end).()
+      |> (fn acc ->
+            case String.contains?(cube, "blue") do
+              true -> Map.put(acc, :blue, extract_integer(cube))
+              _ -> acc
             end
           end).()
     end)
