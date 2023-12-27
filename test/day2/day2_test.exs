@@ -27,4 +27,14 @@ defmodule Day2Test do
              "11 red, 2 green"
            ]
   end
+
+  test "it parses a game set to produce a map of red, green and blue amounts" do
+    set_string = "7 red, 14 blue 8 green"
+
+    assert Day2.get_game_set_amounts(set_string) = %{
+             :red => 7,
+             :green => 8,
+             :blue => 14
+           }
+  end
 end
