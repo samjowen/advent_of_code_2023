@@ -59,4 +59,13 @@ defmodule Day2 do
   def sum_map(map) do
     Map.values(map) |> Enum.sum()
   end
+
+  def validate_set(game_set_string, cube_limit) do
+    cube_map = parse_game_set_amounts(game_set_string)
+
+    case sum_map(cube_map) > cube_limit do
+      true -> false
+      false -> true
+    end
+  end
 end
