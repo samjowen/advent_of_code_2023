@@ -3,6 +3,7 @@ defmodule AdventOfCode2023 do
   Documentation for `AdventOfCode2023`.
   """
 
+  # Day 1
   def day1_solve_part_1(input_file_path) do
     Day1.parse_file(input_file_path)
     |> Enum.map(&Day1.combine_first_and_last_number/1)
@@ -14,5 +15,10 @@ defmodule AdventOfCode2023 do
     |> Enum.map(&Day1.convert_substrings_to_integer_strings/1)
     |> Enum.map(&Day1.combine_first_and_last_number/1)
     |> Enum.sum()
+  end
+
+  # Day 2
+  def day2_solve_part2(input_file_path) do
+    Day1.parse_file(input_file_path)
   end
 end
