@@ -78,4 +78,31 @@ defmodule Day2Test do
 
     assert Day2.validate_set(thirty_cube_set_str, cube_limit) == false
   end
+
+  test "it tests if a game set string with cubes in different order is valid" do
+    cube_limit = 29
+
+    # 29 cubes, different order
+    different_order_set_str = "14 blue, 7 red, 8 green"
+
+    assert Day2.validate_set(different_order_set_str, cube_limit) == true
+  end
+
+  test "it tests if a game set string missing a color is valid" do
+    cube_limit = 29
+
+    # 21 cubes, missing green
+    missing_color_set_str = "7 red, 14 blue"
+
+    assert Day2.validate_set(missing_color_set_str, cube_limit) == true
+  end
+
+  test "it tests if a game set string missing a color and exceeding the limit is invalid" do
+    cube_limit = 29
+
+    # 30 cubes, missing green
+    missing_color_exceeding_limit_set_str = "15 red, 15 blue"
+
+    assert Day2.validate_set(missing_color_exceeding_limit_set_str, cube_limit) == false
+  end
 end
