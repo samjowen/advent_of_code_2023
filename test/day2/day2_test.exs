@@ -29,12 +29,16 @@ defmodule Day2Test do
   end
 
   test "it parses a game set to produce a map of red, green and blue amounts" do
-    set_string = "7 red, 14 blue 8 green"
+    set_string = "7 red, 14 blue, 8 green"
 
-    assert Day2.get_game_set_amounts(set_string) = %{
+    assert Day2.parse_game_set_amounts(set_string) == %{
              :red => 7,
              :green => 8,
              :blue => 14
            }
+  end
+
+  test "it extracts integer from a string" do
+    assert Day2.extract_integer("21 meow 21") == 2121
   end
 end

@@ -15,4 +15,41 @@ defmodule Day2 do
     |> String.split(";")
     |> Enum.map(&String.trim/1)
   end
+
+  def parse_game_set_amounts(set_string) do
+    initial_cube_map = %{
+      :red => 0,
+      :green => 0,
+      :blue => 0
+    }
+
+    cube_list = String.split(set_string, ",")
+
+    Enum.reduce(cube_list, initial_cube_map, fn x, acc ->
+      case String.contains?(x, "red") do
+        true -> Map.put(acc, :red, extract_integer(x))
+        false -> acc
+      end
+      |> (fn acc ->
+            case String.contains?(x, "green") do
+              true -> Map.put(acc, :green, extract_integer(x))
+              false -> acc
+            end
+          end).()
+      |> (fn acc ->
+            case String.contains?(x, "blue") do
+              true -> Map.put(acc, :blue, extract_integer(x))
+              false -> acc
+            end
+          end).()
+    end)
+  end
+
+  def remove_non_digits(str) do
+    Regex.replace(~r/\D/, str, "")
+  end
+
+  def extract_integer(string) do
+    remove_non_digits(string) |> String.to_integer()
+  end
 end

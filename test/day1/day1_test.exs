@@ -38,16 +38,16 @@ defmodule Day1Test do
              1,
              fn x -> Day1.convert_word_to_integer_string(x) end
            ) == [
-             "0",
-             "1",
-             "2",
-             "3",
-             "4",
-             "5",
-             "6",
-             "7",
-             "8",
-             "9"
+             "zero0zero",
+             "one1one",
+             "two2two",
+             "three3three",
+             "four4four",
+             "five5five",
+             "six6six",
+             "seven7seven",
+             "eight8eight",
+             "nine9nine"
            ]
   end
 
@@ -59,7 +59,7 @@ defmodule Day1Test do
     assert Day1.convert_substrings_to_integer_strings(
              "zero one two three four five six seven eight nine"
            ) ==
-             "0 1 2 3 4 5 6 7 8 9"
+             "zero0zero one1one two2two three3three four4four five5five six6six seven7seven eight8eight nine9nine"
   end
 
   test "should convert substrings according to a replacement map" do
