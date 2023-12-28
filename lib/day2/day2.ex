@@ -72,7 +72,6 @@ defmodule Day2 do
   def validate_set_by_colour_and_amount(game_set_string, cube_map) do
     # cube_map will be in the shape of a %{:red => x, :blue => y...}
     set_cube_map = parse_game_set_amounts(game_set_string)
-    IO.inspect(set_cube_map)
     cube_map_keys = Map.keys(cube_map)
 
     accumulated_list = []
@@ -87,11 +86,10 @@ defmodule Day2 do
 
     validity_list =
       Enum.reduce(cube_map_keys, accumulated_list, fn cube_colour, accumulated_list ->
-        IO.inspect(cube_colour)
+        IO.inspect(set_cube_map[cube_colour])
+        IO.inspect(cube_map[cube_colour])
         [set_cube_map[cube_colour] >= cube_map[cube_colour] | accumulated_list]
       end)
-
-    IO.inspect(validity_list)
 
     Enum.all?(validity_list)
   end

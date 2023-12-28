@@ -110,23 +110,35 @@ defmodule Day2Test do
     thirty_cube_set_str = "7 red, 15 blue, 8 green"
 
     max_cubes = %{
-      :red => 7,
-      :blue => 15,
-      :green => 8
+      :red => 6,
+      :blue => 14,
+      :green => 7
     }
 
     assert Day2.validate_set_by_colour_and_amount(thirty_cube_set_str, max_cubes) == true
   end
 
-  # test "it can validate an invalid game set by the number of cubes and their colurs" do
-  #   game_set_string = "12 red, 12 blue, 15 green"
+  test "it can validate an invalid game set by the number of cubes and their colurs" do
+    game_set_string = "12 red, 12 blue, 15 green"
 
-  #   cube_map = %{
-  #     :red => 7,
-  #     :green => 13,
-  #     :blue => 14
-  #   }
+    cube_map = %{
+      :red => 7,
+      :green => 13,
+      :blue => 14
+    }
 
-  #   assert Day2.validate_set_by_colour_and_amount(game_set_string, cube_map) == false
-  # end
+    assert Day2.validate_set_by_colour_and_amount(game_set_string, cube_map) == false
+  end
+
+  test "it can validate a valid game set by the number of cubes and their colurs" do
+    thirty_cube_set_str = "7 red, 15 blue, 8 green"
+
+    max_cubes = %{
+      :red => 6,
+      :blue => 14,
+      :green => 7
+    }
+
+    assert Day2.validate_set_by_colour_and_amount(thirty_cube_set_str, max_cubes) == true
+  end
 end
