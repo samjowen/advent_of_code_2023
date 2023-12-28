@@ -2,6 +2,13 @@
 
 Exploring Elixir through [Advent of Code 2023](https://adventofcode.com/2023), embracing Test-Driven Development for quality and efficiency. :purple_heart:
 
+## Stars
+
+| Day | Part I | Part II |
+| --- | ------ | ------ |
+| 1   | ⭐️ | ⭐️ |
+| 2   | ⭐️ |  |
+
 ## Installation
 
 If [available in Hex](https://hex.pm/docs/publish), the package can be installed
