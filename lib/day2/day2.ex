@@ -72,6 +72,27 @@ defmodule Day2 do
   def validate_set_by_colour_and_amount(game_set_string, cube_map) do
     # cube_map will be in the shape of a %{:red => x, :blue => y...}
     set_cube_map = parse_game_set_amounts(game_set_string)
-    
+    IO.inspect(set_cube_map)
+    cube_map_keys = Map.keys(cube_map)
+
+    accumulated_list = []
+    # Note: this is how we can track the valid/invalid cube numbers in the future,
+    # we don't have to for now, but we might need to in the future.
+    # validity_list = Enum.reduce(cube_map_keys, accumulated_list, fn cube_colour, accumulated_list ->
+    #   [{cube_colour, set_cube_map[cube_colour] > cube_map[cube_colour]} | accumulated_list]
+    # end)
+
+    # Thus, for now, I am just going to return a boolean list, if any of them are false, I'm just going to
+    # say that the set is invalid.
+
+    validity_list =
+      Enum.reduce(cube_map_keys, accumulated_list, fn cube_colour, accumulated_list ->
+        IO.inspect(cube_colour)
+        [set_cube_map[cube_colour] >= cube_map[cube_colour] | accumulated_list]
+      end)
+
+    IO.inspect(validity_list)
+
+    Enum.all?(validity_list)
   end
 end
