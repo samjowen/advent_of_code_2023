@@ -68,4 +68,10 @@ defmodule Day2 do
       false -> true
     end
   end
+
+  def validate_set_by_colour_and_amount(game_set_string, cube_map) do
+    # cube_map will be in the shape of a %{:red => x, :blue => y...}
+    set_cube_map = parse_game_set_amounts(game_set_string)
+    
+  end
 end
