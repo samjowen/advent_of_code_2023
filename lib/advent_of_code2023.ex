@@ -36,5 +36,19 @@ defmodule AdventOfCode2023 do
         all_sets_valid = Enum.all?(set_validity_list)
         Map.put(accumulator, game_number, all_sets_valid)
       end)
+
+    valid_ids_strs =
+      Map.filter(games_list_with_validity, fn {_key, value} ->
+        value == true
+      end)
+
+    valid_id_ints =
+      Map.keys(valid_ids_strs)
+      |> Enum.reduce([], fn x, acc ->
+        id_integer = String.to_integer(x)
+        [id_integer | acc]
+      end)
+
+    Enum.sum(valid_id_ints)
   end
 end
