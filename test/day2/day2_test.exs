@@ -106,7 +106,7 @@ defmodule Day2Test do
     assert Day2.validate_set(missing_color_exceeding_limit_set_str, cube_limit) == false
   end
 
-  test "it can validate a valid game set by the number of cubes and their colurs" do
+  test "it can validate an invalid game set by the number of cubes and their colurs" do
     thirty_cube_set_str = "7 red, 15 blue, 8 green"
 
     max_cubes = %{
@@ -115,10 +115,10 @@ defmodule Day2Test do
       :green => 7
     }
 
-    assert Day2.validate_set_by_colour_and_amount(thirty_cube_set_str, max_cubes) == true
+    assert Day2.validate_set_by_colour_and_amount(thirty_cube_set_str, max_cubes) == false
   end
 
-  test "it can validate an invalid game set by the number of cubes and their colurs" do
+  test "it can validate an invalid game set by the number of cubes and their colours" do
     game_set_string = "12 red, 12 blue, 15 green"
 
     cube_map = %{
@@ -130,8 +130,20 @@ defmodule Day2Test do
     assert Day2.validate_set_by_colour_and_amount(game_set_string, cube_map) == false
   end
 
-  test "it can validate a valid game set by the number of cubes and their colurs" do
-    thirty_cube_set_str = "7 red, 15 blue, 8 green"
+  test "it can validate an invalid game set with missing cube colour in set string" do
+    thirty_cube_set_str = "7 red, 15 blue"
+
+    max_cubes = %{
+      :red => 6,
+      :blue => 14,
+      :green => 7
+    }
+
+    assert Day2.validate_set_by_colour_and_amount(thirty_cube_set_str, max_cubes) == false
+  end
+
+  test "it can validate a valid game set with missing cube colour in set string" do
+    thirty_cube_set_str = "5 red, 13 blue"
 
     max_cubes = %{
       :red => 6,
