@@ -18,4 +18,8 @@ defmodule Day2SolvesTest do
              max_cube_map
            ) == 8
   end
+
+  test "solves the day 2 part 2 puzzle correctly" do
+    assert AdventOfCode2023.day2_solve_part_2("./test/day2/mocks/part-2-test-case.txt") == 2286
+  end
 end

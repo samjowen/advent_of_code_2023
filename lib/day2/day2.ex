@@ -86,10 +86,6 @@ defmodule Day2 do
 
     validity_list =
       Enum.reduce(set_map_keys, accumulated_list, fn cube_colour, accumulated_list ->
-        # IO.inspect(cube_map, label: "lib/day2/day2.ex:#(__ENV__.LINE)")
-        IO.inspect(set_cube_map[cube_colour], label: "set cube map")
-        IO.inspect(cube_map[cube_colour], label: "max cube map")
-
         [(set_cube_map[cube_colour] || 0) <= (cube_map[cube_colour] || 0) | accumulated_list]
       end)
 
