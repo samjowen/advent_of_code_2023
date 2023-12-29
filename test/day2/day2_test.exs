@@ -181,4 +181,21 @@ defmodule Day2Test do
     game_set_string = "3 blue, 4 red"
     assert Day2.get_power_of_set(game_set_string) == 12
   end
+
+  test "returns the power of a map" do
+    game_set_map_1 = %{
+      :red => 4,
+      :green => 2,
+      :blue => 6
+    }
+
+    game_set_map_2 = %{
+      :red => 1,
+      :green => 0,
+      :blue => 3
+    }
+
+    assert Day2.get_power_of_map(game_set_map_1) == 48
+    assert Day2.get_power_of_map(game_set_map_2) == 3
+  end
 end
