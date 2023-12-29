@@ -111,4 +111,23 @@ defmodule Day2 do
     blue = if(cube_map[:blue] == 0, do: 1, else: cube_map[:blue])
     red * green * blue
   end
+
+  def get_minimal_map(game_string) do
+    game_sets = parse_game_sets(game_string)
+
+    game_set_maps =
+      Enum.reduce(game_sets, [], fn set, acc ->
+        [parse_game_set_amounts(set) | acc]
+      end)
+
+    max_red = get_max_cubes(game_set_maps, :red)
+    max_green = get_max_cubes(game_set_maps, :green)
+    max_blue = get_max_cubes(game_set_maps, :blue)
+
+    %{
+      :red => max_red,
+      :green => max_green,
+      :blue => max_blue
+    }
+  end
 end
