@@ -74,8 +74,6 @@ defmodule Day2 do
     set_cube_map = parse_game_set_amounts(game_set_string)
     set_map_keys = Map.keys(set_cube_map)
 
-    IO.inspect(set_cube_map, label: "set cube map")
-
     accumulated_list = []
     # Note: this is how we can track the valid/invalid cube numbers in the future,
     # we don't have to for now, but we might need to in the future.
@@ -86,8 +84,6 @@ defmodule Day2 do
     # Thus, for now, I am just going to return a boolean list, if any of them are false, I'm just going to
     # say that the set is invalid.
 
-    IO.inspect(cube_map, label: "lib/day2/day2.ex:#(__ENV__.LINE)")
-
     validity_list =
       Enum.reduce(set_map_keys, accumulated_list, fn cube_colour, accumulated_list ->
         # IO.inspect(cube_map, label: "lib/day2/day2.ex:#(__ENV__.LINE)")
@@ -97,8 +93,18 @@ defmodule Day2 do
         [(set_cube_map[cube_colour] || 0) <= (cube_map[cube_colour] || 0) | accumulated_list]
       end)
 
-    IO.inspect(validity_list, label: "validitiy list")
-
     Enum.all?(validity_list)
+  end
+
+  def get_max_cubes(game_set_maps, colour) do
+    Enum.reduce(game_set_maps, 0, fn set, acc ->
+      max_cubes = Map.get(set, colour, 0)
+
+      if max_cubes > acc do
+        max_cubes
+      else
+        acc
+      end
+    end)
   end
 end
