@@ -51,4 +51,16 @@ defmodule AdventOfCode2023 do
 
     Enum.sum(valid_id_ints)
   end
+
+  def day2_solve_part_2(input_file_path) do
+    games_list = Day1.parse_file(input_file_path)
+    accumulated_powers = []
+
+    Enum.reduce(games_list, accumulated_powers, fn game, acc ->
+      minimal_map = Day2.get_minimal_map(game)
+      power = Day2.get_power_of_map(minimal_map)
+      [power | acc]
+    end)
+    |> Enum.sum()
+  end
 end
