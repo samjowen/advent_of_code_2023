@@ -153,4 +153,16 @@ defmodule Day2Test do
 
     assert Day2.validate_set_by_colour_and_amount(thirty_cube_set_str, max_cubes) == true
   end
+
+  test "returns the maximum number of cubes for a specified color" do
+    game_1_sets = [
+      %{red: 4, green: 0, blue: 3},
+      %{red: 1, green: 2, blue: 6},
+      %{red: 0, green: 2, blue: 0}
+    ]
+
+    assert Day2.get_max_cubes(game_1_sets, :blue) == 6
+    assert Day2.get_max_cubes(game_1_sets, :red) == 4
+    assert Day2.get_max_cubes(game_1_sets, :green) == 2
+  end
 end
