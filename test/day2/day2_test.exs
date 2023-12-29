@@ -171,4 +171,7 @@ defmodule Day2Test do
     game_1_string = "Game 1: 3 blue, 4 red; 1 red, 2 green, 6 blue; 2 green"
     assert Day2.get_power_of_set(game_1_string) == 48
   end
+
+  # We need a test for a set string, not just the extracted map as we have above.
+  # ... test here:
 end
