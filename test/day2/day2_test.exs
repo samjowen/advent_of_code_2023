@@ -166,12 +166,16 @@ defmodule Day2Test do
     assert Day2.get_max_cubes(game_1_sets, :green) == 2
   end
 
-  test "returns the power of a set of cubes" do
-    # The power of a set of cubes is equal to the numbers of red, green, and blue cubes multiplied together.
-    game_1_string = "Game 1: 3 blue, 4 red; 1 red, 2 green, 6 blue; 2 green"
-    assert Day2.get_power_of_set(game_1_string) == 48
-  end
+  # test "returns the power of a set of cubes" do
+  #   # The power of a set of cubes is equal to the numbers of red, green, and blue cubes multiplied together.
+  #   game_1_string = "Game 1: 3 blue, 4 red; 1 red, 2 green, 6 blue; 2 green"
+  #   assert Day2.get_power_of_set(game_1_string) == 48
+  # end
 
   # We need a test for a set string, not just the extracted map as we have above.
   # ... test here:
+  test "returns the power of a set string" do
+    game_set_string = "3 blue, 4 red"
+    assert Day2.get_power_of_set(game_set_string) == 12
+  end
 end

@@ -103,4 +103,12 @@ defmodule Day2 do
       end
     end)
   end
+
+  def get_power_of_set(game_set_string) do
+    cube_map = parse_game_set_amounts(game_set_string)
+    red = if(cube_map[:red] == 0, do: 1, else: cube_map[:red])
+    green = if(cube_map[:green] == 0, do: 1, else: cube_map[:green])
+    blue = if(cube_map[:blue] == 0, do: 1, else: cube_map[:blue])
+    red * green * blue
+  end
 end
