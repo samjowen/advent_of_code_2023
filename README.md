@@ -7,7 +7,7 @@ Exploring Elixir through [Advent of Code 2023](https://adventofcode.com/2023), e
 | Day | Part I | Part II |
 | --- | ------ | ------ |
 | 1   | ⭐️ | ⭐️ |
-| 2   | ⭐️ |  |
+| 2   | ⭐️ | ⭐️ |
 
 ## Installation
 
